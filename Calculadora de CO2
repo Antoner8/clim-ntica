@@ -1,0 +1,221 @@
+
+#include <iostream>
+#include <conio.h>
+
+//ropa//
+struct ca
+{
+  int r = 2.50;
+  int l = 2500;
+  int d = 12.50;
+  int a = 127.01;
+} cam;
+struct ps
+{
+  int r = 11.6;
+  int l = 1308;
+  int d = 6.5;
+  int a = 589.9;
+} pan;
+struct fs
+{
+  int r = 3.64;
+  int l = 392.4;
+  int d = 2;
+  int a = 184.8;
+} fal;
+struct zs
+{
+  int r = 5.74;
+  int l = 8244.63;
+  int d = 41.2;
+  int a = 291.7;
+} zap;
+
+//muebles//
+
+struct es
+{
+  int r = 18.14;
+  int l = 30.653;
+  int d = 153.3;
+  int a = 921.1;
+} est;
+struct sf
+{
+  int r = 90.14;
+  int l = 50.293;
+  int d = 251.5;
+  int a = 4579.39;
+} sof;
+struct ms6
+{
+  int r = 24.77;
+  int l = 32.267;
+  int d = 161.3;
+  int a = 1258.39;
+} mes;
+struct cl
+{
+  int r = 79.46;
+  int l = 25.856;
+  int d = 129.3;
+  int a = 4036.82;
+} col;
+
+//varios//
+
+struct lb
+{
+  int r = 2.10;
+  int l = 477;
+  int d = 2.39;
+  int a = 106.68;
+} lib;
+struct bc
+{
+  int r = 16.65;
+  int l = 118;
+  int d = 0.59;
+  int a = 845.77;
+} bic;
+
+//electrodomesticos//
+
+struct os
+{
+  int r = 144;
+  int l = 1427;
+  int d = 7.14;
+  int a = 7315.65;
+} ord;
+struct fr
+{
+  int r = 266.98;
+  int l = 7813;
+  int d = 39.10;
+  int a = 13563.4;
+} frig;
+struct lv
+{
+  int r = 23.4;
+  int l = 3617;
+  int d = 18.1;
+  int a = 1188.79;
+} lav;
+
+void imprimir (int cantidad, int x, int y, int z, int v);
+
+
+using namespace std;
+
+int
+main ()
+{
+  int grupo, objeto, cant;
+  cout << "\nBIENVENIDO A LA CALCULADORA DE CO2, comienza!\n";
+
+  cout << "\nElige el grupo poniendo su número: \n";
+  cout << "1.Ropa" << " 2.Muebles" << " 3.Varios" <<
+    " 4.Electrodomésticos\n";
+  cin >> grupo;
+  system ("clear");
+  switch (grupo)
+    {
+    case 1:
+      cout << "Elegiste Ropa, ahora elige la prenda: \n";
+      cout << "1.Camiseta Algodón 2.Pantalón Sintético " << endl;
+      cout << "3.Falda Sintética 4.Zapatillas deportivas" << endl;
+      cin >> objeto;
+      cout << "Ponga la cantidad: ";
+      cin >> cant;
+      switch (objeto)
+	{
+	case 1:
+	  imprimir (cant, cam.r, cam.l, cam.d, cam.a);
+	  break;
+	case 2:
+	  imprimir (cant, pan.r, pan.l, pan.d, pan.a);
+	case 3:
+	  imprimir (cant, fal.r, fal.l, fal.d, fal.a);
+	  break;
+	case 4:
+	  imprimir (cant, zap.r, zap.l, zap.d, zap.a);
+	  break;
+	}
+      break;
+    case 2:
+      cout << "Elegiste Muebles, ahora elige el mueble: " << endl;
+      cout << "1.Estantería 2.Sofá 3.Mesa para seis  4.Colchón" << endl;
+      cin >> objeto;
+      cout << "Ponga la cantidad: ";
+      cin >> cant;
+      switch (objeto)
+	{
+	case 1:
+	  imprimir (cant, est.r, est.l, est.d, est.a);
+	  break;
+	case 2:
+	  imprimir (cant, sof.r, sof.l, sof.d, sof.a);
+	  break;
+	case 3:
+	  imprimir (cant, mes.r, mes.l, mes.d, mes.a);
+	  break;
+	case 4:
+	  imprimir (cant, col.r, col.l, col.d, col.a);
+	  break;
+	}
+      break;
+    case 3:
+      cout << "Elegiste Varios, ahora elige el objeto variado: " << endl;
+      cout << "1.Libro 2.Bicicleta" << endl;
+      cin >> objeto;
+      cout << "Ponga la cantidad: ";
+      cin >> cant;
+      switch (objeto)
+	{
+	case 1:
+	  imprimir (cant, lib.r, lib.l, lib.d, lib.a);
+	case 2:
+	  imprimir (cant, bic.r, bic.l, bic.d, bic.a);
+	}
+      break;
+    case 4:
+      cout <<
+	"Elegiste Electrodomésticos, ahora elige el Electrodoméstico: " <<
+	endl;
+      cout << "1.Ordenador de Sobremesa 2.Frigorífico 3.Lavadora" << endl;
+      cin >> objeto;
+      cout << "Ponga la cantidad: ";
+      cin >> cant;
+      switch (objeto)
+	{
+	case 1:
+	  imprimir (cant, ord.r, ord.l, ord.d, ord.a);
+	  break;
+	case 2:
+	  imprimir (cant, frig.r, frig.l, frig.d, frig.a);
+	  break;
+	case 3:
+	  imprimir (cant, lav.r, lav.l, lav.d, lav.a);
+	  break;
+	}
+      break;
+    }
+
+
+  getch ();
+  return 0;
+}
+
+void
+imprimir (int cantidad, int x, int y, int z, int v)
+{
+  system ("clear");
+  cout << "Con " << cantidad << " podrías: \n";
+  cout << "Reutilizar y ahorrar  " << cantidad * x << " kg de CO2!\n";
+  cout << "Ahorrar " << cantidad * y << " L de agua \n";
+  cout << "Esto equivale a " << cantidad *z << " duchas de 10 minutos \n";
+  cout << "Y a " << cantidad * v << " árboles absorbiendo CO2 en un día\n";
+}
+
